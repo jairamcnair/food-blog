@@ -129,7 +129,7 @@ app.post("/api/data/comment/", async(req, res) => {
 })
 
 
-
+module.exports = app;
 
 
 
