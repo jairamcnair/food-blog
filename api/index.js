@@ -37,7 +37,7 @@ app.get('/', (req, res) => {
 
 
 // get the comments and replies
-app.get(`/api/data/:recipe`, async (req, res) => {
+app.get(`/data/:recipe`, async (req, res) => {
     const { recipe } = req.params.recipe;
         try {
             const sql = neon(`${process.env.DATABASE_POSTGRES_URL}`);
