@@ -139,5 +139,5 @@ app.post("/api/data/comment/", async(req, res) => {
 
 
 
-app.listen(port, () => {console.log(`Server listening at http://localhost:${port}`);});
+//app.listen(port, () => {console.log(`Server listening at http://localhost:${port}`);});
 
