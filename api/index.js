@@ -38,7 +38,7 @@ app.get('/', (req, res) => {
 
 // get the comments and replies
 app.get(`/data/:recipe`, async (req, res) => {
-    const { recipe } = req.params.recipe;
+    const { recipe } = req.params;
         try {
             const sql = neon(`${process.env.DATABASE_POSTGRES_URL}`);
             const result = await sql.query('SELECT * FROM comments WHERE recipe = $1', [recipe]);
