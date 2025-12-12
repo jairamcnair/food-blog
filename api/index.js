@@ -16,10 +16,10 @@ const {neon} = require("@neondatabase/serverless")
 const sql = neon(`${process.env.DATABASE_URL}`);  // Retrieve your database connection string from an environment variable
 */
 
-//const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3000;
 
 const {neon} = require("@neondatabase/serverless")
-const port = 3000;
+//const port = 3000;
 
 
 
@@ -31,7 +31,7 @@ const Pool = require("pg").Pool;
 
 
 
-    app.get('/', (req, res) => {
+app.get('/', (req, res) => {
   res.json({ message: 'Hello from Express on Vercel!' });
 });
 
@@ -141,4 +141,3 @@ app.post("/api/data/comment/", async(req, res) => {
 
 app.listen(port, () => {console.log(`Server listening at http://localhost:${port}`);});
 
-module.exports = app;
