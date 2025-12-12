@@ -1,12 +1,22 @@
 
 
-const express = require("express");
-const serverlessExpress = require("@vendia/serverless-express");
+import { neon } from "@neondatabase/serverless";
 
-const app = express();
+export default async function handler(req, res) {
+  try {
+    const { recipe } = req.query;
 
-app.get("/:recipe", (req, res) => {
-  res.json({ recipe: req.params.recipe });
-});
+    const sql = neon(process.env.DATABASE_POSTGRES_URL);
+    const result = await sql(
+      `SELECT * FROM comments WHERE recipe = $1`,
+      [recipe]
+    );
 
-module.exports = serverlessExpress({ app });
+    result.sort((a, b) => a.comment_id - b.comment_id);
+
+    res.status(200).json(result);
+  } catch (err) {
+    console.error("Error fetching data:", err);
+    res.status(500).json({ error: "Internal server error" });
+  }
+}
