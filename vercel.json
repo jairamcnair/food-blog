@@ -6,7 +6,7 @@
 {
   "functions": {
     "api/server.js": {
-      "runtime": "nodejs20.9.0"
+      "runtime": "nodejs20.x"
     }
   }
 }
