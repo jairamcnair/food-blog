@@ -5,9 +5,7 @@
 
 {
   "functions": {
-    "api/server.js": {
-      "runtime": "now-node@20.9.0"
-    }
+    "api/server.js": {}
   }
 }
 
