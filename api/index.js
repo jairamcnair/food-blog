@@ -30,6 +30,12 @@ const Pool = require("pg").Pool;
     });
 
 
+
+    app.get('/', (req, res) => {
+  res.json({ message: 'Hello from Express on Vercel!' });
+});
+
+
 // get the comments and replies
 app.get(`/api/data/:recipe`, async (req, res) => {
     const { recipe } = req.params.recipe;
