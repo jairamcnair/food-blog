@@ -4,8 +4,11 @@
 
 
 {
+  "version": 2,
   "functions": {
-    "api/server.js": {}
+    "api/server.js": {
+      "memory": 128
+    }
   }
 }
 
