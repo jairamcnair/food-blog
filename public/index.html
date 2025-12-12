@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blissful Eats</title>
+    <link href="index.css" rel="stylesheet"/>
+    <script src="./com-header.js"></script>
+    <script src="./com-footer.js"></script>
+    <script src="./com-card.js"></script>
+    <link rel="icon" href="./images/favicon.png" type="image/x-icon">
+</head>
+<body>
+    <com-header></com-header>
+
+    <index-page>
+
+
+        <h2>Breakfast</h2>
+        <h4>Latest recipes...</h4>
+        <card-container>
+            <card id="Cinnamon-Maple Oatmeal"></card>
+        </card-container>
+
+        <h2>Lunch & Dinner</h2>
+        <h4>Latest recipes...</h4>
+        <card-container>
+            <card id="Cinnamon-Maple Oatmeal"></card>
+            <card id="Cinnamon-Maple Oatmeal"></card>
+        </card-container>
+
+        <h2>Sides</h2>
+        <card-container>
+            <card id="Cinnamon-Maple Oatmeal"></card>
+        </card-container>
+
+        <h2>Appetizers</h2>
+        <card-container>
+            <card id="Travel Tips for Every Destination"></card>
+        </card-container>
+
+        <h2>Desserts</h2>
+        <card-container>
+            <card id="Travel Tips for Every Destination"></card>
+        </card-container>
+
+        <h2>Doughs & Breads</h2>
+        <card-container>
+            <card id="Travel Tips for Every Destination"></card>
+        </card-container>
+
+        <h2>Drinks, Shakes, & More</h2>
+        <card-container>
+            <card id="Travel Tips for Every Destination"></card>
+        </card-container>
+
+        <h2>Condiments</h2>
+        <card-container>
+            <card id="Travel Tips for Every Destination"></card>
+        </card-container>
+
+        
+
+
+        </card-container>
+    </index-page>
+    
+
+
+    <com-footer></com-footer>
+
+    
+
+
+    <script>
+        const elements = document.querySelectorAll('card');
+        
+        //console.log(elements)
+        
+        elements.forEach(element => {
+
+            // create container div 
+            let str = element.id;
+            let noWhitespace = str.replace(/\s/g, '');
+
+            const link = document.createElement("a");
+            link.href=noWhitespace+'.html';
+            link.target='blank'
+            link.style.textDecoration='none'
+            element.appendChild(link)
+
+            const container = document.createElement("div");
+            container.style.width = '280px'
+            container.style.display = 'flex';
+            container.style.flexDirection = 'column';
+            //container.style.border ='1px solid #dadada'
+            link.appendChild(container)
+        
+
+            // create image div
+            const image = document.createElement("img");
+            image.src = "./images/"+element.id+".jpg";
+            container.appendChild(image);
+
+            
+            // create text div
+            const title = document.createElement("a");
+            title.innerText = element.id;
+            title.target = '_blank';
+            title.href = noWhitespace+".html"
+            title.style.textDecoration = "none";
+            title.style.color = "black";
+            title.style.fontWeight='bold'
+            title.style.textAlign='center';
+            title.addEventListener('mouseover', () => {title.style.textDecoration = "underline";});
+            title.addEventListener('mouseout', () => {title.style.textDecoration = "none";});
+            title.style.paddingTop = "20px"; title.style.paddingBottom = "20px";
+            container.appendChild(title);
+
+
+        });
+    </script>
+    
+</body>
+
+
+</html>

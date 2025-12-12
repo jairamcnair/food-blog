@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Libertinus+Serif+Display&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+.montserrat {font-family: "Montserrat", sans-serif;font-optical-sizing: auto;font-weight: 400;font-style: normal;}
+.libertinus-serif-display-regular {font-family: "Libertinus Serif Display", system-ui;font-weight: 400;font-style: normal;font-size: 100px;}
+
+.no-margin-top{margin-top:0;margin-bottom: 40px;padding-top:0px;}
+
+script{display: none;}
+*{ padding: 0; margin: 0; font-family: "Montserrat", sans-serif; font-optical-sizing: auto; font-style: normal; display: block;}
+b, i{display: inline;}
+b{margin: 5px 0px 20px 0px;}
+.bold{font-weight: bold; margin-top: 20px;}
+.inline{display: inline;}
+.hidden{display: none;}
+.show{display: block;}
+
+
+
+
+
+.flex{display: flex; width: 100%;}
+.flex-column{width: 100%; display: flex; flex-direction: column;}
+.flex-column div{width: 100%; padding: 30px 0px; display: flex; flex-direction: column; align-items: center; border: 1px solid #dadada;}
+.flex div{width: 50%; padding: 30px 10px; display: flex; flex-direction: column; align-items: center; border: 1px solid #dadada;}
+
+quantity{display: inline;}
+
+rep{border:1px solid #dadada;}
+/*rep-container{display: none;}*/
+
+
+
+
+body{width: 100%; padding: 20px 0px 100px 0px; display: flex; flex-direction: column; align-items: center; justify-content: center;}
+main{width: 50%; display: flex; flex-direction: column; align-items: center;}
+title{text-align: center; max-width: 100%; margin: 100px 0px 20px 0px; font-size: 30px;font-family: "Libertinus Serif Display", system-ui;font-weight: 400;font-style: normal; font-weight: bold;}
+sub-title{text-align: center; max-width: 100%; margin: 0px 0px 0px 0px; font-size: 20px;font-family: "Libertinus Serif Display", system-ui;font-weight: 400;font-style: normal; font-weight: bold;}
+print{border: 1px solid #dadada; border-radius: 10px; margin:50px 0px 50px 0px; height: 50px; width: 150px; border: 1px solid #dadada; display: flex; justify-content: center; align-items: center;}
+print:hover, pinterest:hover{cursor: pointer;}
+
+author, date{font-size: 14px;}
+date{margin: 0px 0px 0px 0px;}
+
+
+
+star-rating-avg{margin: 20px 0px 0px 0px; display: flex; justify-content: center; align-items: center; height: 20px;}
+
+
+hstack{font-size: 14px; width: 200px; display: flex; justify-content: space-around; align-items: center; margin: 0px 0px 20px 0px; height: 20px; }
+rating{margin: 0px 0px 20px 0px; text-decoration: underline;}
+numOfreviews{margin: 0px 20px 0px 0px;}
+rating{margin-top: 50px; margin-bottom: 50px;}
+
+
+
+
+
+/* COMMENTS */
+star-rating-comment{display: flex; padding: 10px; height: 15px; }
+.star, .rating-star{width: 15px; height: 15px; margin: 5px;}
+.star:hover{cursor: pointer;}
+
+
+people{display: inline;}
+serving-buttons{border: 1px solid #dadada; border-radius: 20px; overflow: hidden; display: flex; justify-content: center; align-items: center; margin-top: 20px;}
+decrease-serving, serving-div, increase-serving{ display: flex; justify-content: center; align-items: center; width: 50px; height: 25px; border: 1px solid #dadada; text-align: center; font-size: 15px;}
+decrease-serving, increase-serving:hover{cursor: pointer;}
+
+
+h1{margin: 0px 0px 5px 0px; font-family: "Libertinus Serif Display", system-ui; font-style: normal; font-size: 30px; font-weight: bold;text-decoration: underline;}
+h2{margin: 0px 0px 20px 0px; font-family: "Libertinus Serif Display", system-ui;font-style: normal;font-size: 20px; font-weight: bold;}
+h3{margin: 0px 0px 5px 0px; font-family: "Libertinus Serif Display", system-ui;font-style: normal;font-size: 15px; font-weight: bold;}
+h4{margin: 20px 0px 10px 0px; font-size: 14px; font-weight: bold;}
+p, tip{line-height: 25px; font-size: 14px; margin: 0px;}
+h1, h2, intro, h3, h4 {padding: 0px;}
+p, tip{padding: 5px 10px 5px 10px;}
+h1, h2, intro, h3, h4, p, tip {width: 90%;}
+tip{font-weight: 500; font-style: italic;}
+info, a {width: 90%; margin: 20px 0px 20px 0px;}
+tiny-text{ font-size:12px;text-align: center; margin: 20px 0px 0px 0px;}
+@media(max-width: 1000px){main{width: 70%;} }
+@media(max-width: 800px){main{width: 85%;} img{width: 500px;}}
+@media(max-width: 600px){main{width: 75%;} img{width: 400px;}}
+@media(max-width: 500px){img{width: 300px;}}
+@media(max-width: 400px){img{width: 280px;}}

@@ -1,0 +1,18 @@
+
+
+
+Once deployed to Vercel...
+
+Create a vercel.json file and add the following..
+{
+    "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+}
+
+
+
+Update the connection string in the index.js file (DATABASE_POSTGRES_URL)
+Update the server port in the environment variables IN VERCEL
+
+
+After that, then set up Pinterest and social media share features
+

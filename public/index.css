@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Libertinus+Serif+Display&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+*{padding: 0;margin: 0; font-family: "Montserrat", sans-serif;font-optical-sizing: auto; font-style: normal;}
+h1{margin: 0px 0px 50px 0px; font-family: "Libertinus Serif Display", system-ui; font-style: normal; font-size: 40px; font-weight: bold;text-decoration: underline;}
+h2{margin: 70px 0px 50px 0px; font-family: "Libertinus Serif Display", system-ui;font-style: normal;font-size: 30px; font-weight: bold;}
+h3{margin: 0px 0px 50px 0px; font-family: "Libertinus Serif Display", system-ui;font-style: normal;font-size: 20px; font-weight: bold;}
+h4{margin: 0px 0px 0px 0px; font-size: 16px; font-weight: bold;}
+
+
+card-container{display: grid; margin: 50px 0px 50px 0px; gap: 100px; grid-template-columns: 1fr 1fr 1fr;}
+@media(max-width: 1200px){card-container{grid-template-columns: 1fr 1fr;}}
+@media(max-width: 725px){card-container{grid-template-columns: 1fr;}}
+
+index-page{display: flex; flex-direction: column; align-items: center;}
