@@ -22,7 +22,7 @@ export default async function handler(req, res) {
 
     const sql = neon(process.env.DATABASE_POSTGRES_URL);
 
-    const result = await sql(
+    const result = await sql.query(
       `SELECT * FROM comments WHERE recipe = $1`,
       [recipe]
     );
