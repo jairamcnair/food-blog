@@ -60,9 +60,7 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: "Method not allowed" });
   }
 
-  try {
-    //const { recipe, username, comment } = req.body; // Expect JSON body
-    
+  try {    
     const currentDate = new Date();
     const monthName = await getMonthName(currentDate.getMonth()+1)
     const date = currentDate.getFullYear() + "-" + monthName + "-" + currentDate.getDate();
@@ -75,17 +73,9 @@ export default async function handler(req, res) {
 
     const sql = neon(process.env.DATABASE_POSTGRES_URL);
 
-    // Insert the comment into the database
-
     const result = await sql.query("INSERT INTO comments (recipe, name, email, rating, comment, date, reply_to) VALUES($1, $2, $3, $4, $5, $6, $7) RETURNING *",
             [recipe, name, email, rating, comment, date, reply_to]
         );
-
-
-    /*const result = await sql.query(
-      `INSERT INTO comments (recipe, username, comment) VALUES ($1, $2, $3) RETURNING *`,
-      [recipe, username, comment]
-    );*/
 
     res.status(201).json({ message: "Comment added successfully", comment: result[0] });
   } catch (err) {

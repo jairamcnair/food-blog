@@ -1,6 +1,6 @@
 // project source: https://www.youtube.com/watch?v=ldYcgPKEZC8&t=305s
 // this is the first file created for the project
-
+/*
 const cheerio = require('cheerio');
 const express = require("express");
 const app = express(); 
@@ -16,6 +16,7 @@ const {neon} = require("@neondatabase/serverless")
 const sql = neon(`${process.env.DATABASE_URL}`);  // Retrieve your database connection string from an environment variable
 */
 
+/*
 const port = process.env.PORT || 3000;
 
 const {neon} = require("@neondatabase/serverless")
@@ -26,7 +27,7 @@ const {neon} = require("@neondatabase/serverless")
 const Pool = require("pg").Pool; 
     const pool = new Pool({
         /*FOR LOCAL*/ //connectionString: process.env.DATABASE_URL, // Get from .env
-        /* FOR DEPLOYED*/ connectionString: process.env.DATABASE_POSTGRES_URL,
+        /* FOR DEPLOYED connectionString: process.env.DATABASE_POSTGRES_URL,
     });
 
 
@@ -96,6 +97,8 @@ async function getMonthName(monthNumber) {
     }
 */
 
+
+/*
 // post the comment or reply to the database
 app.post("/api/data/comment/", async(req, res) => {
 
@@ -127,7 +130,7 @@ app.post("/api/data/comment/", async(req, res) => {
 
 
 module.exports = app;
-
+*/
 
 
 
