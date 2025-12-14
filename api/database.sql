@@ -12,28 +12,7 @@ Get the database URL from neon website (connect to your database => select Node.
 
 */
 
-CREATE TABLE comments2 (
-    comment_id SERIAL PRIMARY KEY,
-    recipe INTEGER, /* FOREIGN KEY*/
-    name VARCHAR(255),
-    email VARCHAR(255),
-    rating VARCHAR(1),
-    comment VARCHAR(255),
-    date DATE,
-    replies JSONB
-);
 
-INSERT INTO comments2 (name, rating, comment, date, replies) VALUES (
-    'This is the main post content.',
-    '4',
-    'This was good',
-    '2025-12-09',
-    '[
-        {"user_id": 1, "username": "Alice", "comment": "Great post!"},
-        {"user_id": 2, "username": "Bob", "comment": "I agree."},
-        {"user_id": 3, "username": "Charlie", "comment": "Interesting perspective."}
-    ]'::jsonb
-);
 
 CREATE TABLE comments (
     comment_id SERIAL PRIMARY KEY,
@@ -43,7 +22,7 @@ CREATE TABLE comments (
     rating VARCHAR(1),
     comment VARCHAR(255),
     date DATE,
-    reply_to INTEGER
+    reply_to TEXT
 );
 
 CREATE TABLE replies (
@@ -67,4 +46,4 @@ CREATE TABLE subscriptions (
 );
 
 INSERT INTO subscriptions (email) VALUES ('jaimcnair10@gmail.com');
-INSERT INTO comments (recipe, name, rating, comment, date) VALUES (1, 'Jane Doe', 4, 'This was super good!', '2025-12-9')
+INSERT INTO comments (recipe, name, rating, comment, date, reply_to) VALUES (1, 'Jane Doe', 4, 'This was super good!', '2025-12-9', 'main')
