@@ -4,21 +4,31 @@
 
 
 
+document.getElementById("pin-btn").addEventListener("click", function() {
+    const pageUrl = encodeURIComponent("https://food-blog-tau-seven.vercel.app/Cinnamon-MapleOatmeal.html");
+    const imageUrl = encodeURIComponent("https://food-blog-tau-seven.vercel.app/images/Cinnamon-Maple+Oatmeal.png");
+    const description = encodeURIComponent("Delicious and easy Cinnamon Maple Oatmeal recipe!");
 
-document.getElementById("pin-btn").addEventListener("click", function () {
-  const url = encodeURIComponent(window.location.href);
+    const pinterestUrl = `https://www.pinterest.com/pin/create/button/?url=${pageUrl}&media=${imageUrl}&description=${description}`;
 
-  const pinterestUrl =
-    "https://www.pinterest.com/pin/create/button/?url=" + url;
-
-  //window.open(pinterestUrl, "_blank", "width=750,height=550");
-  window.open(
-  "https://www.pinterest.com/pin/create/button/?url=" +
-    encodeURIComponent(window.location.href),
-  "_blank",
-  "width=750,height=550"
-);
+    window.open(pinterestUrl, "_blank", "width=750,height=550");
 });
+
+
+
+/*
+document.getElementById("pin-btn").addEventListener("click", function() {
+    const pageUrl = encodeURIComponent("https://food-blog-tau-seven.vercel.app/Cinnamon-MapleOatmeal.html");
+    const imageUrl = encodeURIComponent("https://food-blog-tau-seven.vercel.app/images/Cinnamon-Maple+Oatmeal.png");
+    const title = encodeURIComponent("Cinnamon Maple Oatmeal");
+    const description = encodeURIComponent("Delicious and easy Cinnamon Maple Oatmeal recipe!");
+
+    // Construct the Pinterest share URL
+    const pinterestUrl = `https://www.pinterest.com/pin/create/button/?url=${pageUrl}&media=${imageUrl}&description=${description}&title=${title}`;
+
+    // Open the Pinterest popup
+    window.open(pinterestUrl, "_blank", "width=750,height=550");
+});*/
 
 
 
