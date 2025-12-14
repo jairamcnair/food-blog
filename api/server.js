@@ -31,21 +31,21 @@ const Pool = require("pg").Pool;
 
 
 // get the comments and replies
-app.get(`/api/data/:recipe`, async (req, res) => {
+/*app.get(`/api/data/:recipe`, async (req, res) => {
     const { recipe } = req.params;
         try {
             const sql = neon(`${process.env.DATABASE_POSTGRES_URL}`);
             const result = await sql.query('SELECT * FROM comments WHERE recipe = $1', [recipe]);
 
-            /*const client = await pool.connect();
-            const result = await client.query('SELECT * FROM comments WHERE recipe = $1', [recipe]);*/
+            //const client = await pool.connect();
+            //const result = await client.query('SELECT * FROM comments WHERE recipe = $1', [recipe]);
            // the results MUST be returned in order of id
            result.rows.sort((a, b) => a.comment_id - b.comment_id);
            //res.json({"all":result.rows});
            res.json("HEY")
            client.release();
         } catch (err) {console.error('Error fetching data:', err);res.status(500).json({ error: 'Internal server error' });}
-});
+});*/
 
 
 async function getMonthName(monthNumber) {
@@ -107,8 +107,10 @@ app.post("/api/data/comment/", async(req, res) => {
         const date = currentDate.getFullYear() + "-" + monthName + "-" + currentDate.getDate();
         //console.log(date)
 
-        const{ recipe, name, email, rating, comment, reply_to } = req.body; // get's the JSON requested object
+        const{ recipe, name, rating, comment, reply_to } = req.body; // get's the JSON requested object
 
+
+        const email = null;
         // pass todo description to query
         const client = await pool.connect();
         const newTodo = await client.query("INSERT INTO comments (recipe, name, email, rating, comment, date, reply_to) VALUES($1, $2, $3, $4, $5, $6, $7) RETURNING *",
