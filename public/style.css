@@ -31,7 +31,7 @@ date{margin: 0px 0px 50px 0px;}
 img{width: 500px; margin: 30px 0px 15px 0px;}
 img-caption{margin: 20px 0px 60px 0px; font-size:14px;text-align: center;}
 
-jumpToRecipe{border: 1px solid #dadada; padding: 15px; border-radius: 10px; width: 150px; text-align: center;}
+jumpToRecipe{border: 1px solid #dadada; margin: 60px 0px 0px 0px; padding: 15px; border-radius: 10px; width: 150px; text-align: center;}
 jumpToRecipe:hover{cursor: pointer;}
 
 
