@@ -48,6 +48,7 @@ const Pool = require("pg").Pool;
 });*/
 
 
+/*
 async function getMonthName(monthNumber) {
         let monthName;
       
@@ -93,7 +94,7 @@ async function getMonthName(monthNumber) {
         }
         return monthName;
     }
-
+*/
 
 // post the comment or reply to the database
 app.post("/api/data/comment/", async(req, res) => {
