@@ -25,6 +25,14 @@ CREATE TABLE comments (
     reply_to TEXT
 );
 
+
+INSERT INTO subscriptions (email) VALUES ('jaimcnair10@gmail.com');
+INSERT INTO comments (recipe, name, rating, comment, date, reply_to) VALUES (1, 'Jane Doe', 4, 'This was super good!', '2025-12-9', 'main')
+
+
+
+
+
 CREATE TABLE replies (
     reply_id SERIAL PRIMARY KEY,
     reply_to INTEGER,
@@ -44,6 +52,3 @@ CREATE TABLE subscriptions (
     email VARCHAR(255),
     date DATE
 );
-
-INSERT INTO subscriptions (email) VALUES ('jaimcnair10@gmail.com');
-INSERT INTO comments (recipe, name, rating, comment, date, reply_to) VALUES (1, 'Jane Doe', 4, 'This was super good!', '2025-12-9', 'main')
