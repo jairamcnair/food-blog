@@ -5,10 +5,25 @@
 
 
 
+document.getElementById("pin-btn").addEventListener("click", function () {
+  const url = encodeURIComponent(window.location.href);
+  const media = encodeURIComponent("/images/Cinnamon-Maple Oatmeal.jpg"); // required
+  const description = encodeURIComponent("Check this out!");
+
+  const pinterestUrl =
+    `https://www.pinterest.com/pin/create/button/?` +
+    `url=${url}&media=${media}&description=${description}`;
+
+  window.open(pinterestUrl, "_blank", "width=750,height=550");
+});
+
+
+
+
+
+
+/*
 const pinit = document.querySelector("pinit");
-
-
-
 
 function openPinterestShareWindow(pageUrl, imageUrl, descriptionText) {
     // URL-encode the parameters
@@ -20,7 +35,7 @@ function openPinterestShareWindow(pageUrl, imageUrl, descriptionText) {
     // Open the URL in a new pop-up window
     // Customize dimensions as needed
     window.open(pinterestUrl, 'pinterestShare', 'width=600,height=450');
-}
+}*/
 
 
 /*
