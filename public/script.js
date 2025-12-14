@@ -3,10 +3,14 @@
 
 
 
+/* AFFILIATE LINKS */
+const affiliates = document.querySelectorAll(".affiliate");
+affiliates.forEach(affiliate => {
+    affiliate.innerHTML += " (affiliate)"
+})
 
 
-
-
+/* PINTEREST BUTTON */
 document.getElementById("pin-btn").addEventListener("click", function() {
     // Read meta tags dynamically
     const getMetaContent = (property) => {
@@ -61,13 +65,13 @@ increase.addEventListener("click", increaseServing);
 decrease.addEventListener("click", decreaseServing);
 function increaseServing(){
     servings.innerHTML = Number(servings.innerHTML) + 1
-    quantities.forEach(element => {element.innerHTML = Number(element.getAttribute("value")) * Number(servings.innerHTML);})
+    quantities.forEach(element => {element.innerHTML = (Number(element.getAttribute("value")) * Number(servings.innerHTML)).toFixed(3);})
     people.innerHTML = Number(people.getAttribute("value")) * Number(servings.innerHTML) 
 }
 function decreaseServing(){
     if(servings.innerHTML > 0){servings.innerHTML = Number(servings.innerHTML) - 1}
     else{servings.innerHTML = servings.innerHTML}
-    quantities.forEach(element => {element.innerHTML = Number(element.getAttribute("value")) * Number(servings.innerHTML);})
+    quantities.forEach(element => {element.innerHTML = (Number(element.getAttribute("value")) * Number(servings.innerHTML)).toFixed(3);})
     people.innerHTML = Number(people.getAttribute("value")) * Number(servings.innerHTML) 
 }
 

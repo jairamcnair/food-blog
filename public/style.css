@@ -18,7 +18,7 @@ rep{border:1px solid #dadada;}
 /*rep-container{display: none;}*/
 
 
-
+.affiliate, .non-affiliate {margin: 5px 0px; font-size: 14px;}
 
 body{width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center;}
 main{width: 50%; display: flex; flex-direction: column; align-items: center;}
