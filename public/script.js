@@ -8,19 +8,8 @@
 document.getElementById("pin-btn").addEventListener("click", function () {
   const url = encodeURIComponent(window.location.href);
 
-  const media = encodeURIComponent(
-    "https://food-blog-tau-seven.vercel.app/images/Cinnamon-Maple Oatmeal.jpg"
-  );
-
-  const description = encodeURIComponent(
-    "This image will now show correctly"
-  );
-
   const pinterestUrl =
-    "https://www.pinterest.com/pin/create/button/" +
-    "?url=" + url +
-    "&media=" + media +
-    "&description=" + description;
+    "https://www.pinterest.com/pin/create/button/?url=" + url;
 
   window.open(pinterestUrl, "_blank", "width=750,height=550");
 });
