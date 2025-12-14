@@ -1,3 +1,10 @@
+
+
+export const config = {
+  runtime: "nodejs",
+};
+
+
 import { neon } from "@neondatabase/serverless";
 
 export default async function handler(req, res) {
