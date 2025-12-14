@@ -11,8 +11,17 @@ document.getElementById("pin-btn").addEventListener("click", function () {
   const pinterestUrl =
     "https://www.pinterest.com/pin/create/button/?url=" + url;
 
-  window.open(pinterestUrl, "_blank", "width=750,height=550");
+  //window.open(pinterestUrl, "_blank", "width=750,height=550");
+  window.open(
+  "https://www.pinterest.com/pin/create/button/?url=" +
+    encodeURIComponent(window.location.href),
+  "_blank",
+  "width=750,height=550"
+);
 });
+
+
+
 
 
 
