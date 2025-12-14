@@ -230,7 +230,7 @@ async function fetchData(recipe) {
     }catch (error) {console.error('Error fetching data:', error);document.getElementById('dataContainer').innerHTML = '<p>Error loading data.</p>';}
 }
 fetchData(recipe)
-async function postData(formData){try {const recipe = 1;const response = await fetch(`http://localhost:5000/api/data/comment/`, {method: "POST", headers: {"Content-Type": "application/json"},body: JSON.stringify(formData)});} catch (err) {console.error(err.message);}window.location.reload();}
+async function postData(formData){try {const recipe = 13;const response = await fetch(`http://localhost:5000/api/data/comment/`, {method: "POST", headers: {"Content-Type": "application/json"},body: JSON.stringify(formData)});} catch (err) {console.error(err.message);}window.location.reload();}
 </script>
 
 </main>

@@ -272,7 +272,7 @@ async function fetchData(recipe) {
 fetchData(recipe)
 document.getElementById('myForm').addEventListener('submit', function(event) {event.preventDefault(); const form = event.target;const formData = new FormData(form);const data = {};for (const [key, value] of formData.entries()) {data[key] = value;}postData(data)});
 document.getElementById('replyForm').addEventListener('submit', function(event) {event.preventDefault(); const form = event.target;const formData = new FormData(form);const data = {};for (const [key, value] of formData.entries()) {data[key] = value;}postData(data)});
-async function postData(formData){try {const recipe = 1;const response = await fetch(`/api/data/comment/`, {method: "POST", headers: {"Content-Type": "application/json"},body: JSON.stringify(formData)});} catch (err) {console.error(err.message);}window.location.reload();}
+async function postData(formData){try {const recipe = 11; const response = await fetch(`/api/data/comment/`, {method: "POST", headers: {"Content-Type": "application/json"},body: JSON.stringify(formData)});} catch (err) {console.error(err.message);}window.location.reload();}
 </script>
 
 <!--PINTEREST-->
