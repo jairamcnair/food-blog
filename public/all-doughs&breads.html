@@ -16,56 +16,14 @@
     <index-page>
 
 
-        <h2>Breakfast</h2>
-        <h4>Latest recipes...</h4>
-        <card-container>
-            <card id="Cinnamon-Maple Oatmeal"></card>
-        </card-container>
-        <a class="see-more-btn" href="./all-breakfast.html">See more...</a>
-
-        <h2>Lunch & Dinner Entrees</h2>
-        <h4>Latest recipes...</h4>
-        <card-container>
-            <card id="Cinnamon-Maple Oatmeal"></card>
-            <card id="Cinnamon-Maple Oatmeal"></card>
-        </card-container>
-        <a class="see-more-btn" href="./all-lunch&dinnerentrees.html">See more...</a>
-
-        <h2>Appetizers, Sides & Salads</h2>
-        <card-container>
-            <card id="Cinnamon-Maple Oatmeal"></card>
-        </card-container>
-        <a class="see-more-btn" href="./all-appetizerssides&salads.html">See more...</a>
-
-
-        <h2>Desserts</h2>
-        <card-container>
-            <card id="Cinnamon-Maple Oatmeal"></card>
-        </card-container>
-        <a class="see-more-btn" href="./all-desserts.html">See more...</a>
-
         <h2>Doughs & Breads</h2>
+        <h4>All Recipes</h4>
+
+
         <card-container>
             <card id="Cinnamon-Maple Oatmeal"></card>
         </card-container>
-        <a class="see-more-btn" href="./all-doughs&breads.html">See more...</a>
-
-        <h2>Drinks, Shakes, & More</h2>
-        <card-container>
-            <card id="Cinnamon-Maple Oatmeal"></card>
-        </card-container>
-        <a class="see-more-btn" href="./all-drinksshakes&more.html">See more...</a>
-
-        <h2>Condiments</h2>
-        <card-container>
-            <card id="Cinnamon-Maple Oatmeal"></card>
-        </card-container>
-        <a class="see-more-btn" href="./all-condiments.html">See more...</a>
-
         
-
-
-        </card-container>
     </index-page>
     
 
@@ -87,8 +45,7 @@
             let noWhitespace = str.replace(/\s/g, '');
 
             const link = document.createElement("a");
-            link.href=noWhitespace+'/index.html';
-            //link.href=noWhitespace;
+            link.href=noWhitespace+'.html';
             link.target='blank'
             link.style.textDecoration='none'
             element.appendChild(link)

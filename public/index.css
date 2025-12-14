@@ -8,6 +8,8 @@ h3{margin: 0px 0px 50px 0px; font-family: "Libertinus Serif Display", system-ui;
 h4{margin: 0px 0px 0px 0px; font-size: 16px; font-weight: bold;}
 
 
+.see-more-btn{display: flex; justify-content: center; align-items: center; margin: 0px 0px 120px 0px; text-decoration: none; width: 150px; color: white; background-color: black; border-radius: 5px; height: 50px; border: 1px solid; }
+.see-more-btn:hover{cursor: pointer;}
 card-container{display: grid; margin: 50px 0px 50px 0px; gap: 100px; grid-template-columns: 1fr 1fr 1fr;}
 @media(max-width: 1200px){card-container{grid-template-columns: 1fr 1fr;}}
 @media(max-width: 725px){card-container{grid-template-columns: 1fr;}}

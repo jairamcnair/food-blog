@@ -9,7 +9,15 @@
     "api/server.js": {
       "memory": 128
     }
-  }
+  },
+  "cleanUrls": true,
+  "redirects": [
+    {
+      "source": "/:path*.html",
+      "destination": "/:path*",
+      "permanent": true
+    }
+  ]
 }
 
 
