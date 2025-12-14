@@ -4,10 +4,30 @@
 
 
 
+
+
+
 document.getElementById("pin-btn").addEventListener("click", function() {
-    const pageUrl = encodeURIComponent("https://food-blog-tau-seven.vercel.app/Cinnamon-MapleOatmeal.html");
-    const imageUrl = encodeURIComponent("https://food-blog-tau-seven.vercel.app/images/Cinnamon-Maple+Oatmeal.png");
-    const description = encodeURIComponent("Delicious and easy Cinnamon Maple Oatmeal recipe!");
+    // Read meta tags dynamically
+    const getMetaContent = (property) => {
+        const tag = document.querySelector(`meta[property="${property}"]`) 
+                 || document.querySelector(`meta[name="${property}"]`);
+        return tag ? tag.getAttribute("content") : "";
+    };
+
+    const pageUrl = encodeURIComponent(getMetaContent("og:url") || window.location.href);
+    const imageUrl = encodeURIComponent(getMetaContent("og:image") || "");
+    const description = encodeURIComponent(getMetaContent("og:description") || getMetaContent("description") || "");
+
+    /*
+    if (!imageUrl) {
+        alert("No image found for Pinterest pin!");
+        return;
+    }
+    if (!description) {
+        alert("No description!");
+        return;
+    }*/
 
     const pinterestUrl = `https://www.pinterest.com/pin/create/button/?url=${pageUrl}&media=${imageUrl}&description=${description}`;
 
@@ -15,83 +35,6 @@ document.getElementById("pin-btn").addEventListener("click", function() {
 });
 
 
-
-/*
-document.getElementById("pin-btn").addEventListener("click", function() {
-    const pageUrl = encodeURIComponent("https://food-blog-tau-seven.vercel.app/Cinnamon-MapleOatmeal.html");
-    const imageUrl = encodeURIComponent("https://food-blog-tau-seven.vercel.app/images/Cinnamon-Maple+Oatmeal.png");
-    const title = encodeURIComponent("Cinnamon Maple Oatmeal");
-    const description = encodeURIComponent("Delicious and easy Cinnamon Maple Oatmeal recipe!");
-
-    // Construct the Pinterest share URL
-    const pinterestUrl = `https://www.pinterest.com/pin/create/button/?url=${pageUrl}&media=${imageUrl}&description=${description}&title=${title}`;
-
-    // Open the Pinterest popup
-    window.open(pinterestUrl, "_blank", "width=750,height=550");
-});*/
-
-
-
-
-
-
-
-
-
-/*
-const pinit = document.querySelector("pinit");
-
-function openPinterestShareWindow(pageUrl, imageUrl, descriptionText) {
-    // URL-encode the parameters
-    const pinterestUrl = 'https://www.pinterest.com/pin/create/button/' +
-        '?url=' + encodeURIComponent(pageUrl) +
-        '&media=' + encodeURIComponent(imageUrl) +
-        '&description=' + encodeURIComponent(descriptionText);
-
-    // Open the URL in a new pop-up window
-    // Customize dimensions as needed
-    window.open(pinterestUrl, 'pinterestShare', 'width=600,height=450');
-}*/
-
-
-/*
-const pageUrl = document.querySelector("pageURL").getAttribute("name");
-const imageUrl = document.querySelector("img").getAttribute("src");
-const descriptionText = document.querySelector("description").getAttribute("name");
-*/
-
-
-
-/*
-pinit.addEventListener("click", openPinterestShareWindow);
-function openPinterestShareWindow(event) {
-    const pageUrl = event.target.getAttribute("pageUrl");
-    const imageUrl = event.target.getAttribute("imageUrl");
-    const descriptionText = event.target.getAttribute("descriptionText")
-   
-    console.log(pageUrl)
-    console.log(imageUrl)
-    console.log(descriptionText)
-
-    // URL-encode the parameters
-    const pinterestUrl = 'https://www.pinterest.com/pin/create/button/' +
-        '?url=' + encodeURIComponent(pageUrl) +
-        '&media=' + encodeURIComponent(imageUrl) +
-        '&description=' + encodeURIComponent(descriptionText);
-
-    // Open the URL in a new pop-up window
-    // Customize dimensions as needed
-    window.open(pinterestUrl, 'pinterestShare', 'width=600,height=450');
-}*/
-
-
-
-
-
-function pinIt(page, img, description){
-    const string = `http://pinterest.com/pin/create/button/?url=${page}&media=${img}&description=${description}`;
-    window.location.href = string;
-}
 
 
 
