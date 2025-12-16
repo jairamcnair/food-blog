@@ -64,7 +64,7 @@ export default async function handler(req, res) {
     const currentDate = new Date();
     const monthName = await getMonthName(currentDate.getMonth()+1)
     const date = currentDate.getFullYear() + "-" + monthName + "-" + currentDate.getDate();
-    const{ recipe, name, rating, comment, reply_to } = req.body; // get's the JSON requested object
+    let { recipe, name, rating, comment, reply_to } = req.body; // get's the JSON requested object
     const email = null;
 
     const sql = neon(process.env.DATABASE_POSTGRES_URL);
