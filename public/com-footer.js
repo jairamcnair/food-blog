@@ -24,7 +24,7 @@ class Footer extends HTMLElement {
                 <div class="logo"> Blissful Eats </div>
                 <div class="nav-links-container">
                     <div>
-                        <a href="./index.html" target="_blank">Blog Posts</a>
+                        <a href="./index.html" target="_blank">Recipes</a>
                         <a href="./About.html" target="_blank">About</a>
                     </div>
                     <div>
