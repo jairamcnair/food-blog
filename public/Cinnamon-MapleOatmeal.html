@@ -275,19 +275,6 @@ document.getElementById('replyForm').addEventListener('submit', function(event) 
 async function postData(formData){try {const recipe = 11; const response = await fetch(`/api/data/comment/`, {method: "POST", headers: {"Content-Type": "application/json"},body: JSON.stringify(formData)});} catch (err) {console.error(err.message);}window.location.reload();}
 </script>
 
-<!--PINTEREST-->
-<script>
-function pinRecipe(recipeUrl, recipeImage, recipeTitle, recipeDesc) {
-  let url = encodeURIComponent(recipeUrl);
-  let image = encodeURIComponent(recipeImage);
-  let title = encodeURIComponent(recipeTitle);
-  let desc = encodeURIComponent(recipeDesc);
-
-  // Pinterest Pin It URL format
-  let pinUrl = `pinterest.com{url}&media=${image}&description=${title}%20-%20${desc}`;
-  window.open(pinUrl, '_blank', 'width=800,height=600');
-}
-</script>
 </com-comments>
 <comments-container></comments-container>
 <com-footer></com-footer>
