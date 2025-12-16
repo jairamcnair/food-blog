@@ -95,12 +95,6 @@ decrease-serving, serving-div, increase-serving{ display: flex; justify-content:
 decrease-serving, increase-serving:hover{cursor: pointer;}
 
 
-/*
-cook-mode{border-radius: 20px;display: flex; justify-content: center; align-items: center; overflow: hidden;}
-on, off{width: 50px; height: 30px; display: flex; justify-content: center; align-items: center; }
-on{background-color: #aefda7ff;}
-off{background-color: #dadada;}
-cook-mode:hover{cursor: pointer;}*/
 
 tog{width: 25px; height: 25px; border-radius: 100%; background-color: #ffffff;}
 tog:hover{cursor: pointer;}
@@ -121,11 +115,11 @@ h1{margin: 70px 0px 20px 0px; font-family: "Libertinus Serif Display", system-ui
 h2{margin: 70px 0px 10px 0px; font-family: "Libertinus Serif Display", system-ui;font-style: normal;font-size: 30px; font-weight: bold;}
 h3{margin: 70px 0px 10px 0px; font-family: "Libertinus Serif Display", system-ui;font-style: normal;font-size: 20px; font-weight: bold;}
 h4{margin: 50px 0px 0px 0px; font-size: 16px; font-weight: bold;}
-p, tip{line-height: 25px; font-size: 15px; margin: 0px;}
+p, tip, note{line-height: 25px; font-size: 15px; margin: 0px;}
 h1, h2, intro, h3, h4 {padding: 20px 15px 20px 15px;}
-p, tip{padding: 10px 15px 10px 15px;}
-h1, h2, intro, h3, h4, p, tip {width: 90%;}
-tip{font-weight: 500; font-style: italic;}
+p, tip, note{padding: 10px 15px 10px 15px;}
+h1, h2, intro, h3, h4, p, tip, note {width: 90%;}
+tip, note{font-weight: 500; font-style: italic;}
 info, a {width: 90%; margin: 20px 0px 20px 0px;}
 tiny-text{ font-size:14px;text-align: center; margin: 20px 0px 0px 0px;}
 @media(max-width: 1000px){main{width: 70%;} }
