@@ -71,7 +71,7 @@ export default async function handler(req, res) {
 
     console.log(rating)
     console.log(req.body.rating)
-    if(rating === null || undefined){
+    if(rating === null || rating === undefined){
       rating = 0;
     }
 
