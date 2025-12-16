@@ -44,9 +44,8 @@ document.getElementById("pin-btn").addEventListener("click", function() {
 
 /* JUMP TO RECIPE*/
 const jumpToRecipe = document.querySelector('jumpToRecipe');
-const Recipe = document.getElementById('materials');
+const Recipe = document.getElementById('servings');
 function scrollToRecipe() {
-    console.log("HEY")
   Recipe.scrollIntoView({
     behavior: 'smooth', // 'auto' (default), 'smooth', or 'instant'
     block: 'start',     // 'start' (default), 'center', 'end', or 'nearest'
