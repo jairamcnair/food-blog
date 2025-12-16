@@ -73,6 +73,10 @@ export default async function handler(req, res) {
 
     const sql = neon(process.env.DATABASE_POSTGRES_URL);
 
+    if(rating == null){
+      rating = 5;
+    }
+
     const result = await sql.query("INSERT INTO comments (recipe, name, email, rating, comment, date, reply_to) VALUES($1, $2, $3, $4, $5, $6, $7) RETURNING *",
             [recipe, name, email, rating, comment, date, reply_to]
         );
