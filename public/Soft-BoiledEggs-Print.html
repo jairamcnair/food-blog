@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="print-style.css" rel="stylesheet"/><link rel="icon" href="./images/favicon.png" type="image/x-icon">
+<script src="./com-header.js"></script><script src="./com-footer.js"></script>
+</head>
+
+
+
+
+<body>
+<main>
+<title>Soft-Boiled Egg Recipe</title>
+<sub-title>blissfuleats.com</sub-title>
+<print onclick="window.print()">Print</print>
+<div class="flex">
+    <div>
+        <stars value=""></stars>
+        <star-rating-avg>
+            <img class="rating-star" value="1" src="./images/filled-star.png"/>
+            <img class="rating-star" value="2" src="./images/filled-star.png"/>
+            <img class="rating-star" value="3" src="./images/filled-star.png"/>
+            <img class="rating-star" value="4" src="./images/filled-star.png"/>
+            <img class="rating-star" value="5" src="./images/filled-star.png"/>
+        </star-rating-avg>
+        <hstack>
+            <rating id="average"></rating>
+            <text>from</text>
+            <num-of-reviews id="numOfReviews"></num-of-reviews>
+            <text>reviews</text>
+        </hstack>
+    </div>
+    <div>
+<author>Jay B.</author>
+<author>Posted: May 1, 2025</author>
+<date>Last Updated: Dec. 16, 2025</date>
+    </div>
+</div>
+<div class="flex">
+    <div>
+<p><b>Total Time:</b> 20 min</p>
+<p><b>Prep Time:</b> 0 min</p>
+<p><b>Wait Time:</b> 12 min</p>
+<p><b>Cook Time:</b> 8 min</p>
+    </div>
+    <div>
+        <h2 id="materials">Materials</h2>
+        <p><b>Slotted spoon</b></p>
+    </div>
+</div>
+
+<div class="flex">
+    <div>
+            <h2>Number of Servings</h2>
+            <serving-buttons>
+            <decrease-serving>-</decrease-serving>
+            <serving-div><servings>1</servings><span>X</span></serving-div>
+            <increase-serving>+</increase-serving>
+            </serving-buttons>
+            <tiny-text class="bold">Makes <people value="1">1</people> soft-boiled eggs</tiny-text>
+            <tiny-text>Nutrition values, ingredient values in the ingredient list, and ingredient values in the directions auto-update.</tiny-text> 
+    </div>
+    <div>
+            <h2>Nutrition</h2>
+<p><b>Calories:</b> <quantity value="72">72</quantity></p>
+<p><b>Carbs:</b> <quantity value="1">1</quantity></p>
+<p><b>Fat:</b> <quantity value="5">5</quantity></p>
+<p><b>Protein:</b> <quantity value="6">6</quantity></p>
+            <tiny-text>The nutrition values are for the entire dish, not per serving</tiny-text>
+    </div>
+</div>
+
+<div class="flex">
+<div>
+
+
+<h2>Ingredients</h2>
+
+<h4>Spices:</h4>
+<p>salt, to taste</p>
+<p>pepper, to taste</p>
+        
+<h4>Dry:</h4>
+
+
+</div>
+
+
+
+<div>
+<h4>Produce:</h4>
+
+        
+<h4>Dairy & Eggs:</h4>
+<p>egg, <quantity value="1">1</quantity> whole</p>
+        
+
+
+<h4>Meat:</h4>
+</div>
+
+
+</div>
+
+
+
+
+
+
+<div class="flex-column">
+<div>
+<h2>Directions</h2>
+</div>
+
+
+
+<div>     
+<h3>Step 1:</h3>
+<p>Bring a pot to a boil on the highest heat. </p>
+<p>Once the water is boiling, using a spoon with holes, gently and slowly lower the eggs in. Try to fit as many on the spoon as you can so they cook the same amount of time.</p>
+<p>For soft boiled eggs, boil 7 minutes for a runny center; 8 minutes for a gooey center; and 9 minutes for a firm center.</p>
+<note>Tip: Tip: The sudden temperature change can cause the eggs to break. To prevent this, you can let the eggs come to room temperature and/or when you lower the eggs into the water, leave half in and half out for around 5 seconds before slowly lowering the entire egg in.</note>
+</div>
+
+
+
+
+<div>
+<h3>Step 2:</h3>
+<p>Once the timer goes off, immediately run cold water over the eggs and soak them. This prevents the eggs from cooking more, and it makes peeling easier too.</p>
+<note>If you don't soak the eggs in cold water, they will keep cooking until they are medium/hard boiled.</note>
+<p>Once they are cool enough to handle, peel the eggs.</p>
+<note>Tip: To make peeling even easier, dump the hot water out and shake the eggs into each other before running cold water over them.</note>
+<p>Serve and enjoy!</p>
+</div>
+
+
+</div>
+
+
+
+
+
+<script type="module">
+const recipe = 16;
+
+/* AFTER VERCEL DEPLOYMENT TO SET UP DATABASE, I ADDED THIS*/
+//const hostname = window.location.hostname;
+
+async function fetchData(recipe) {
+        try {
+        //const response = await fetch(`http://localhost:5000/api/data/${recipe}`);
+        const response = await fetch(`/api/data/${recipe}`, {
+                method: "GET"
+            });
+        const data = await response.json();
+        const array = JSON.stringify(data.replies)
+        const container = document.querySelector('comments-container');
+        const replies = document.querySelector('rep');
+        let reply = ' ';
+        let html = ' '; // Example headers
+        let innerReply = ' ';
+        const mainContainer = document.querySelector("comments-container");
+        
+        let ratings=[];
+        let sum = 0;
+        let avg = 0;
+        const numOfReviews = document.getElementById("numOfReviews");
+        const average = document.getElementById("average");
+        const starss = document.querySelector("stars"); // stars
+        const ratingstars = document.querySelectorAll(".rating-star");
+
+        data.all.forEach(comment => {
+            if(comment.reply_to == 'main'){
+                ratings.push(comment.rating);
+                sum += Number(comment.rating);
+            }
+            avg = sum/ratings.length;
+            numOfReviews.innerHTML = ratings.length;
+            average.innerHTML = avg.toFixed(2);
+            starss.setAttribute("value", Math.floor(avg));
+
+            ratingstars.forEach(element => {
+                if(element.getAttribute("value") <= starss.getAttribute("value")){
+                    element.src = "./images/filled-star.png";
+                }
+                else{
+                    element.src = "./images/empty-star.png";
+                }
+            })
+            
+        })
+    }catch (error) {console.error('Error fetching data:', error);document.getElementById('dataContainer').innerHTML = '<p>Error loading data.</p>';}
+}
+fetchData(recipe)
+async function postData(formData){try {const recipe = 16;const response = await fetch(`http://localhost:5000/api/data/comment/`, {method: "POST", headers: {"Content-Type": "application/json"},body: JSON.stringify(formData)});} catch (err) {console.error(err.message);}window.location.reload();}
+</script>
+
+</main>
+<script src="./print-script.js"></script>
+</body>
+</html>
