@@ -67,10 +67,6 @@ export default async function handler(req, res) {
     const{ recipe, name, rating, comment, reply_to } = req.body; // get's the JSON requested object
     const email = null;
 
-    /*if (!recipe || !username || !comment) {
-      return res.status(400).json({ error: "Missing required fields" });
-    }*/
-
     const sql = neon(process.env.DATABASE_POSTGRES_URL);
 
     console.log(req.body.rating)
