@@ -75,7 +75,7 @@ export default async function handler(req, res) {
 
     console.log(req.body.rating)
     if(req.body.rating == null){
-      rating = 5;
+      rating = 0;
     }
 
     const result = await sql.query("INSERT INTO comments (recipe, name, email, rating, comment, date, reply_to) VALUES($1, $2, $3, $4, $5, $6, $7) RETURNING *",
