@@ -70,7 +70,7 @@ export default async function handler(req, res) {
     const sql = neon(process.env.DATABASE_POSTGRES_URL);
 
     console.log(rating)
-    if(rating === null){
+    if(rating === null || undefined){
       rating = 0;
     }
 
