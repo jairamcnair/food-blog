@@ -69,8 +69,8 @@ export default async function handler(req, res) {
 
     const sql = neon(process.env.DATABASE_POSTGRES_URL);
 
-    console.log(req.body.rating)
-    if(req.body.rating == null){
+    console.log(rating)
+    if(rating === null){
       rating = 0;
     }
 
