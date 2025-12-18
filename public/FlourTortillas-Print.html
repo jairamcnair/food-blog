@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="print-style.css" rel="stylesheet"/><link rel="icon" href="./images/favicon.png" type="image/x-icon">
+<script src="./com-header.js"></script><script src="./com-footer.js"></script>
+    <!--ANALYTICS-->
+    <!--IN root folder, install   npm i @vercel/analytics (just once) - then put below code in files -->
+    <script class="hidden">window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+    <script defer src="/_vercel/insights/script.js"></script>
+</head>
+
+
+
+
+<body>
+<main>
+<title>Flour Tortillas</title>
+<sub-title>blissfuleats.com</sub-title>
+<print onclick="window.print()">Print</print>
+<div class="flex">
+    <div>
+        <stars value=""></stars>
+        <star-rating-avg>
+            <img class="rating-star" value="1" src="./images/filled-star.png"/>
+            <img class="rating-star" value="2" src="./images/filled-star.png"/>
+            <img class="rating-star" value="3" src="./images/filled-star.png"/>
+            <img class="rating-star" value="4" src="./images/filled-star.png"/>
+            <img class="rating-star" value="5" src="./images/filled-star.png"/>
+        </star-rating-avg>
+        <hstack>
+            <rating id="average"></rating>
+            <text>from</text>
+            <num-of-reviews id="numOfReviews"></num-of-reviews>
+            <text>reviews</text>
+        </hstack>
+    </div>
+    <div>
+<author>Jay B.</author>
+<author>Posted: May 12, 2025</author>
+<date>Last Updated: Dec. 18, 2025</date>
+    </div>
+</div>
+<div class="flex">
+    <div>
+        <h2 id="time">Time Commitment</h2>
+<p><b>Total Time:</b> 1 hr</p>
+<p><b>Prep Time:</b> 20 min</p>
+<p><b>Wait Time:</b> 30 min</p>
+<p><b>Cook Time:</b> 10 min</p>
+    </div>
+    <div>
+        <h2 id="materials">Materials</h2>
+<p>Standing mixer</p>
+<p>Plastic wrap</p>
+
+    </div>
+</div>
+
+<div class="flex">
+    <div>
+            <h2>Number of Servings</h2>
+            <serving-buttons>
+            <decrease-serving>-</decrease-serving>
+            <serving-div><servings>1</servings><span>X</span></serving-div>
+            <increase-serving>+</increase-serving>
+            </serving-buttons>
+<tiny-text class="bold">Makes <people value="4">4</people> 8-inch tortillas</tiny-text>
+            <tiny-text>Nutrition values, ingredient values in the ingredient list, and ingredient values in the directions auto-update.</tiny-text> 
+    </div>
+    <div>
+            <h2>Nutrition</h2>
+<p><b>Calories:</b> <quantity value="405">405</quantity></p>
+<p><b>Carbs:</b> <quantity value="33">33</quantity></p>
+<p><b>Fat:</b> <quantity value="28">28</quantity></p>
+<p><b>Protein:</b> <quantity value="6">6</quantity></p>
+            <tiny-text>The nutrition values are for the entire dish, not per serving</tiny-text>
+    </div>
+</div>
+<div class="flex">
+    <div>
+        <h2>Ingredients</h2>
+        <h4>Spices:</h4>
+<p>salt, <quantity value="0.5">0.5</quantity> tsp</p>
+        
+        <h4>Dry:</h4>
+<p>bread flour, <quantity value="1.5">1.5</quantity> cups </p>
+<p>baking powder, <quantity value="0.5">0.5</quantity> tsp </p>
+<p>olive oil, <quantity value="2">2</quantity> TBSP </p>
+<p>warm water, <quantity value="0.5">0.5</quantity> cups </p>
+
+    </div>
+    <div>
+        <h4>Produce:</h4>
+
+        <h4>Dairy & Eggs:</h4>
+
+
+        <h4>Meat:</h4>
+    </div>
+</div>
+<div class="flex-column">
+    <div>
+        <h2>Directions</h2>
+    </div>
+    <div>     
+<h3>Step 1:</h3>
+<p>In the bowl of a standing mixer, add:</p>
+<p><quantity value="1.5">1.5</quantity> cups bread flour</p>
+<p><quantity value="0.5">0.5</quantity> tsp baking powder</p>
+<p><quantity value="0.5">0.5</quantity> tsp salt</p>
+<p>Whisk together with a spoon, then add:</p>
+<p><quantity value="2">2</quantity> TBSP olive oil</p>
+<p><quantity value="0.5">0.5</quantity> cups warm water</p>
+<p>With the dough hook attachment, mix on medium until the dough comes together.</p>
+<p>Knead 3-5 mins after the dough comes together.</p>
+    </div>
+
+
+
+    <div>
+<h3>Step 2:</h3>
+<p>Wrap the dough in plastic wrap and rest at room temperature 30 mins, up to 4 hours.</p>
+<note>You can make the dough up to 4 days in advance and put it in the fridge.</note>
+<note>If you put the dough in the fridge, you don't have to wait for the dough to come to room temperature. Just roll the dough out cold, though it won't be as flexible at first, it will warm up quickly once rolled out.</note>
+    </div>
+
+
+
+    <div>
+<h3>Step 3:</h3>
+<p>After resting, start heating a non-stick 8-12-inch skillet.</p>
+<p>Divide the dough into four equal balls.</p>
+<p>Roll each ball out into an 8-inch disc.</p>
+<p>Cook each tortilla on a non-stick skillet over med-high heat each side for 5-10 seconds.</p>
+<p>Serve and enjoy!</p>
+    </div>
+
+</div>
+
+
+
+
+
+<script type="module">
+const recipe = 51;
+
+/* AFTER VERCEL DEPLOYMENT TO SET UP DATABASE, I ADDED THIS*/
+//const hostname = window.location.hostname;
+
+async function fetchData(recipe) {
+        try {
+        //const response = await fetch(`http://localhost:5000/api/data/${recipe}`);
+        const response = await fetch(`/api/data/${recipe}`, {
+                method: "GET"
+            });
+        const data = await response.json();
+        const array = JSON.stringify(data.replies)
+        const container = document.querySelector('comments-container');
+        const replies = document.querySelector('rep');
+        let reply = ' ';
+        let html = ' '; // Example headers
+        let innerReply = ' ';
+        const mainContainer = document.querySelector("comments-container");
+        
+        let ratings=[];
+        let sum = 0;
+        let avg = 0;
+        const numOfReviews = document.getElementById("numOfReviews");
+        const average = document.getElementById("average");
+        const starss = document.querySelector("stars"); // stars
+        const ratingstars = document.querySelectorAll(".rating-star");
+
+        data.all.forEach(comment => {
+            if(comment.reply_to == 'main'){
+                ratings.push(comment.rating);
+                sum += Number(comment.rating);
+            }
+            avg = sum/ratings.length;
+            numOfReviews.innerHTML = ratings.length;
+            average.innerHTML = avg.toFixed(2);
+            starss.setAttribute("value", Math.floor(avg));
+
+            ratingstars.forEach(element => {
+                if(element.getAttribute("value") <= starss.getAttribute("value")){
+                    element.src = "./images/filled-star.png";
+                }
+                else{
+                    element.src = "./images/empty-star.png";
+                }
+            })
+            
+        })
+    }catch (error) {console.error('Error fetching data:', error);document.getElementById('dataContainer').innerHTML = '<p>Error loading data.</p>';}
+}
+fetchData(recipe)
+async function postData(formData){try {const recipe = 51; const response = await fetch(`http://localhost:5000/api/data/comment/`, {method: "POST", headers: {"Content-Type": "application/json"},body: JSON.stringify(formData)});} catch (err) {console.error(err.message);}window.location.reload();}
+</script>
+
+</main>
+<script src="./print-script.js"></script>
+</body>
+</html>
