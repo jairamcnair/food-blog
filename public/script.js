@@ -19,6 +19,7 @@ document.getElementById("pin-btn").addEventListener("click", function() {
         return tag ? tag.getAttribute("content") : "";
     };
 
+    const imgTitle = encodeURIComponent(getMetaContent("og:title") || "");
     const pageUrl = encodeURIComponent(getMetaContent("og:url") || window.location.href);
     const imageUrl = encodeURIComponent(getMetaContent("og:image") || "");
     const description = encodeURIComponent(getMetaContent("og:description") || getMetaContent("description") || "");
